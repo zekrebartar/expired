@@ -1,0 +1,12 @@
+app = "arsolx-cron"
+
+[build]
+  builtin = "node"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+[[schedule]]
+  cron = "0 0 * * *"
+  command = "node checkExpired.js"
